@@ -1,0 +1,9 @@
+D:/DADS/cmake-build-debug/CMakeFiles/DADS.dir
+D:/DADS/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/DADS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/DADS/cmake-build-debug/2nd/CMakeFiles/CODE.dir
+D:/DADS/cmake-build-debug/2nd/CMakeFiles/edit_cache.dir
+D:/DADS/cmake-build-debug/2nd/CMakeFiles/rebuild_cache.dir
+D:/DADS/cmake-build-debug/basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir
+D:/DADS/cmake-build-debug/basicDataStructure/CMakeFiles/edit_cache.dir
+D:/DADS/cmake-build-debug/basicDataStructure/CMakeFiles/rebuild_cache.dir
