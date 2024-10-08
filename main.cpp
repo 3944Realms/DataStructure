@@ -29,6 +29,7 @@ int sqListExp() {
     sqList->deleteElem(3, element);
     cout << "(7) 输出顺序表L: ";
     sqList->display();
+    sqList->destroy();
     return 0;
 }
 //int linkListExp() {

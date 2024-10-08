@@ -5,8 +5,6 @@
 #ifndef DADS_SQLIST_H
 #define DADS_SQLIST_H
 
-#include "BDStructure.h"
-
 namespace ds {
 #define dSSQMaxSize 50
 template<class ElemType>
