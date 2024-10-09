@@ -6,4 +6,10 @@ add_library(BASIC_DATA_STRUCTURE
         CLinkList.cpp
         CLinkList.h
         LinkNode.h
+        LinkList.cpp
+        LinkList.h
+        DLinkList.cpp
+        DLinkList.h
+        CdLinkList.cpp
+        CdLinkList.h
 )

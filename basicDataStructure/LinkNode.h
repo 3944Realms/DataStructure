@@ -5,8 +5,6 @@
 #ifndef DADS_LINKNODE_H
 #define DADS_LINKNODE_H
 
-#include "CLinkList.h"
-
 namespace ds {
     template <class ElemType>
     struct LNode {

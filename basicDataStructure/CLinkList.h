@@ -11,11 +11,11 @@ namespace ds {
 
 template <class ElemType>
 class CLinkList {
+    LNode<ElemType>* head;
 public:
     CLinkList() {
         this->head = new LNode<ElemType>;
     }
-    LNode<ElemType>* head;
     static CLinkList* createListF(ElemType a[], int n);
     static CLinkList* createListR(ElemType a[], int n);
     void init();

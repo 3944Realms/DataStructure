@@ -122,6 +122,24 @@ build basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/CLinkList.cpp.obj: 
   OBJECT_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
   OBJECT_FILE_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
 
+build basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/LinkList.cpp.obj: CXX_COMPILER__BASIC_DATA_STRUCTURE_unscanned_Debug D$:/DADS/basicDataStructure/LinkList.cpp || cmake_object_order_depends_target_BASIC_DATA_STRUCTURE
+  DEP_FILE = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir\LinkList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
+  OBJECT_FILE_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
+
+build basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/DLinkList.cpp.obj: CXX_COMPILER__BASIC_DATA_STRUCTURE_unscanned_Debug D$:/DADS/basicDataStructure/DLinkList.cpp || cmake_object_order_depends_target_BASIC_DATA_STRUCTURE
+  DEP_FILE = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir\DLinkList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
+  OBJECT_FILE_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
+
+build basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/CdLinkList.cpp.obj: CXX_COMPILER__BASIC_DATA_STRUCTURE_unscanned_Debug D$:/DADS/basicDataStructure/CdLinkList.cpp || cmake_object_order_depends_target_BASIC_DATA_STRUCTURE
+  DEP_FILE = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir\CdLinkList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
+  OBJECT_FILE_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target BASIC_DATA_STRUCTURE
@@ -130,7 +148,7 @@ build basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/CLinkList.cpp.obj: 
 #############################################
 # Link the static library basicDataStructure\libBASIC_DATA_STRUCTURE.a
 
-build basicDataStructure/libBASIC_DATA_STRUCTURE.a: CXX_STATIC_LIBRARY_LINKER__BASIC_DATA_STRUCTURE_Debug basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/SqList.cpp.obj basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/CLinkList.cpp.obj
+build basicDataStructure/libBASIC_DATA_STRUCTURE.a: CXX_STATIC_LIBRARY_LINKER__BASIC_DATA_STRUCTURE_Debug basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/SqList.cpp.obj basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/CLinkList.cpp.obj basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/LinkList.cpp.obj basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/DLinkList.cpp.obj basicDataStructure/CMakeFiles/BASIC_DATA_STRUCTURE.dir/CdLinkList.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = basicDataStructure\CMakeFiles\BASIC_DATA_STRUCTURE.dir
   POST_BUILD = cd .

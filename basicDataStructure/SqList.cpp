@@ -72,11 +72,11 @@ namespace ds {
 
     template<class ElemType>
     bool ds::SqList<ElemType>::deleteElem(int i, ElemType &e) {
-        int j;
+
         if (i < 1 || i > this->length)
             return false;
         e = this->data[--i];
-        for (j = i; j < this->length - 1; j++) {
+        for (int j = i; j < this->length - 1; j++) {
             this->data[j] = this->data[j + 1];
         }
         this->length--;

@@ -1,10 +1,11 @@
 #include <iostream>
 #include "basicDataStructure/SqList.cpp"
-
+#include "basicDataStructure/LinkList.cpp"
 
 int sqListExp();
+int linkListExp();
 int main() {
-    return sqListExp();
+    return linkListExp();
 }
 int sqListExp() {
     using namespace std;
@@ -32,29 +33,28 @@ int sqListExp() {
     sqList->destroy();
     return 0;
 }
-//int linkListExp() {
-//    using namespace std;
-//    LinkNode *h;
-//    ElemType e;
-//
-//    cout << "单链表的基本运算如下:\n";
-//    cout << "(1) 初始化单链表h\n";
-//    InitList(h);
-//    cout << " (2) 依次采用尾插法插入a,b,c,d,e元素\n";
-//    ListInsert(h,1,'a');
-//    ListInsert(h,2,'b');
-//    ListInsert(h,3,'c');
-//    ListInsert(h,4,'d');
-//    ListInsert(h,5,'e');
-//    cout << " (3) 输出单链表h:";
-//    DispList(h);
-//    GetElem(h,3,e);
-//    cout << "  (4)单链表h的第3个元素:" << e << endl;
-//    cout << "  (5)在第4个元素位置上插入f元素\n";
-//    ListInsert(h,4,'f');
-//    cout << "  (6)删除h的第3个元素\n";
-//    ListDelete(h,3,e);
-//    cout << "  (7)输出单链表h:";
-//    DispList(h);
-//    return 0;
-//}
+int linkListExp() {
+    using namespace std;
+    auto *lLink = new ds::LinkList<char>;
+    char element;
+    cout << "单链表的基本运算如下:\n";
+    cout << "(1) 初始化单链表h\n";
+    lLink->init();
+    cout << "(2) 依次采用尾插法插入a,b,c,d,e元素\n";
+    lLink->insertElem(1,'a');
+    lLink->insertElem(2,'b');
+    lLink->insertElem(3,'c');
+    lLink->insertElem(4,'d');
+    lLink->insertElem(5,'e');
+    cout << "(3) 输出单链表h:";
+    lLink->display();
+    lLink->getElem(3, element);
+    cout << "(4) 单链表h的第3个元素:" << element << endl;
+    cout << "(5) 在第4个元素位置上插入f元素\n";
+    lLink->insertElem(4,'f');
+    cout << "(6) 删除h的第3个元素\n";
+    lLink->deleteElem( 3, element);
+    cout << "(7) 输出单链表h:";
+    lLink->display();
+    return 0;
+}

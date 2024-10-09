@@ -42,8 +42,10 @@ namespace ds {
 
     template <class ElemType>
     void ds::CLinkList<ElemType>::init() {
-        auto *headNode = new LNode<ElemType>;
-        this->head = headNode;
+        LNode<ElemType> *headNode = this->head;
+        if(headNode != nullptr)
+            this->destroy();
+        headNode = new LNode<ElemType>;
         headNode->next = headNode;
     }
 
@@ -52,10 +54,7 @@ namespace ds {
         LNode<ElemType> *headNode = this->head;
         LNode<ElemType> *pre = headNode, *p = pre->next;
         while (p != headNode) {
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "DanglingPointer"
             delete pre;
-#pragma clang diagnostic pop
             pre = p;
             p = pre->next;
         }
@@ -90,7 +89,7 @@ namespace ds {
 
     template <class ElemType>
     bool ds::CLinkList<ElemType>::getElem(int i, ElemType &e) {
-        int j = 1;
+
         LNode<ElemType> *headNode = this->head, *p = headNode->next;
         if (i <= 0 || headNode->next == headNode)
             return false;
@@ -98,16 +97,17 @@ namespace ds {
             e = headNode->next->data;
             return true;
         } else {
-          while (j <= i - 1 && p != headNode) {
-              j++;
-              headNode = headNode->next;
-          }
-          if(p == headNode)
-              return false;
-          else {
-              e = p->data;
-              return true;
-          }
+            int j = 1;
+            while (j <= i - 1 && p != headNode) {
+                j++;
+                headNode = headNode->next;
+            }
+            if(p == headNode)
+                return false;
+            else {
+                e = p->data;
+                return true;
+            }
         }
     }
 
