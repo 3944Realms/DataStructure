@@ -15,6 +15,7 @@ class CLinkList {
 public:
     CLinkList() {
         this->head = new LNode<ElemType>;
+        this->head->next = this->head;
     }
     static CLinkList* createListF(ElemType a[], int n);
     static CLinkList* createListR(ElemType a[], int n);

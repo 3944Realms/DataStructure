@@ -143,7 +143,7 @@ namespace ds {
             if (p == headNode)
                 return false;
             else {
-                s = new CLinkList<ElemType>;
+                s = new LNode<ElemType>;
                 s->data = e;
                 s->next = p->next;
                 p->next = s;

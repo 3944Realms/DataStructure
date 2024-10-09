@@ -15,6 +15,8 @@ namespace ds {
     public:
         CdLinkList() {
             this->head = new DNode<ElemType>;
+            this->head->next = this->head;
+
         }
         static CdLinkList* createListF(ElemType a[], int n);
         static CdLinkList* createListR(ElemType a[], int n);

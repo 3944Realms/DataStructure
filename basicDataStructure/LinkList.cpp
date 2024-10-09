@@ -86,7 +86,7 @@ namespace ds {
         if (i <= 0)
             return false;
         LNode<ElemType> *headNode = this->head, *p = headNode;
-        while (j < i && p!= nullptr) {
+        while (j < i && p != nullptr) {
             j++;
             p = p->next;
         }

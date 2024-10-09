@@ -15,6 +15,7 @@ namespace ds {
     public:
         DLinkList() {
             this->head = new DNode<ElemType>;
+            this->head->next = nullptr;
         }
         static DLinkList* createListF(ElemType a[], int n);
         static DLinkList* createListR(ElemType a[], int n);

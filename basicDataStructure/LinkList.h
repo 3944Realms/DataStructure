@@ -14,6 +14,7 @@ namespace ds {
     public:
         LinkList() {
             this->head = new LNode<ElemType>;
+            this->head->next = nullptr;
         }
         static LinkList* createListF(ElemType a[], int n);
         static LinkList* createListR(ElemType a[], int n);
