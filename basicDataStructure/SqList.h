@@ -10,9 +10,12 @@ namespace ds {
 template<class ElemType>
 class SqList
     {
-        ElemType data[dSSQMaxSize];		//存放顺序表元素
-        int length;					//存放顺序表的长度
+        const unsigned int MaxSize;
+        ElemType *data;		//存放顺序表元素
+        int length{-1};					//存放顺序表的长度
     public:
+        explicit SqList(unsigned int maxSize) : MaxSize(maxSize) {}
+        SqList() : MaxSize(50) {}
         static SqList* create(ElemType a[], int n);
         void init();
         void destroy();

@@ -26,8 +26,11 @@ namespace ds {
         bool getElem(int i, ElemType &e);
         int locateElem(ElemType e);
         bool insertElem(int i, ElemType e);
+        bool appendTailElem(ElemType e);
         bool deleteElem(int i, ElemType &e);
+        bool deleteElem(int i);
     };
+
 
 
 

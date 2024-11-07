@@ -7,7 +7,7 @@ add_subdirectory(basicDataStructure)
 
 
 add_executable(DADS
-        main.cpp
+        Exp2_4.cpp
 )
 
 target_link_libraries(DADS
@@ -15,3 +15,5 @@ target_link_libraries(DADS
 #        CODE
         BASIC_DATA_STRUCTURE
 )
+
+

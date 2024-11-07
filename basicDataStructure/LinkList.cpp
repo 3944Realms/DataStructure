@@ -39,6 +39,9 @@ namespace ds {
     template<class ElemType>
     void ds::LinkList<ElemType>::init() {
         LNode<ElemType> *headNode = this->head;
+        if (headNode != nullptr) {
+            this->destroy();
+        }
         headNode->next = nullptr;
     }
 
@@ -131,6 +134,23 @@ namespace ds {
     }
 
     template<class ElemType>
+    bool LinkList<ElemType>::appendTailElem(ElemType e) {
+        int i = 0;
+        LNode<ElemType> *headNode = this->head, *p = headNode;
+        while (p->next != nullptr) {
+            i++;
+            p = p->next;
+        }
+        LNode<ElemType> *tailElem = new LNode<ElemType>;
+        if (tailElem != nullptr) {//空指针为内存申请失败情况，😳考虑
+            tailElem->data = e;
+            tailElem->next = nullptr;
+            p->next = tailElem;
+        }
+        return tailElem != nullptr;
+    }
+
+    template<class ElemType>
     bool ds::LinkList<ElemType>::deleteElem(int i, ElemType &e) {
         if (i <= 0)
             return false;
@@ -147,6 +167,27 @@ namespace ds {
             if (q == nullptr)
                 return false;
             e = q->data;
+            p->next = q->next;
+            delete q;
+            return true;
+        }
+    }
+    template<class ElemType>
+    bool LinkList<ElemType>::deleteElem(int i) {
+        if (i <= 0)
+            return false;
+        int j = 0;
+        LNode<ElemType> *headNode = this->head, *p = headNode, *q;
+        while (j < i - 1 && p != nullptr) {
+            j++;
+            p = p->next;
+        }
+        if (p == nullptr)
+            return false;
+        else {
+            q = p->next;
+            if (q == nullptr)
+                return false;
             p->next = q->next;
             delete q;
             return true;

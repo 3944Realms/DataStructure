@@ -8,6 +8,8 @@
     <excludeRoots>
       <file path="$PROJECT_DIR$/1st" />
       <file path="$PROJECT_DIR$/2nd" />
+      <file path="$PROJECT_DIR$/3rd" />
+      <file path="$PROJECT_DIR$/4th" />
     </excludeRoots>
   </component>
 </project>

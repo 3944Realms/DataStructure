@@ -12,4 +12,15 @@ add_library(BASIC_DATA_STRUCTURE
         DLinkList.h
         CdLinkList.cpp
         CdLinkList.h
+        BTTree.cpp
+        BTTree.h
+        BTTree.cpp
+        LinkedStack.cpp
+        LinkedStack.h
+        LinkQueue.cpp
+        LinkQueue.h
+        SqStack.cpp
+        SqStack.h
+        SqQueue.cpp
+        SqQueue.h
 )
