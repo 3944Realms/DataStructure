@@ -60,7 +60,7 @@ namespace ds {
 
     template<class ElemType>
     bool ds::LinkedStack<ElemType>::getTop(ElemType &e) {
-        if (this->next == nullptr)
+        if (this->data->next == nullptr)
             return false;
         e = this->data->next->data;
         return true;

@@ -3,16 +3,17 @@
 //
 
 #include "BTTree.h"
-#include "LinkedStack.h"
+#include "LinkedStack.cpp"
 
 namespace ds {
     template<class ElemType>
-    ds::BTTree<ElemType> *BTTree<ElemType>::createBTTree(ElemType list[], const char inx[], int nodeTotal) {//规定下基本类型下各个分割字符
+    ds::BTTree<ElemType> *BTTree<ElemType>::createBTTree(ElemType *list[], const char inx[], int nodeTotal) {//规定下基本类型下各个分割字符
         auto* ret = new BTTree<ElemType>();
         ret->root = nullptr; // 初始化根节点为 nullptr
         BTNode<ElemType>* pBtNode = nullptr; // 当前节点
 //        BTNode<ElemType>* p = nullptr; // 额外指针
-        ds::LinkedStack<ElemType> nodeStack; // 用于管理节点的栈
+        ds::LinkedStack<BTNode<ElemType>*> nodeStack; // 用于管理节点的栈
+        nodeStack.init();//初始化栈
         int total = 0; // 当前添加的节点数
         int i = 0; // 用于遍历 list
         int j = 0; // 用于遍历 inx
@@ -24,36 +25,38 @@ namespace ds {
                 i++;
             }
             // 创建当前节点
-            pBtNode = new BTNode<ElemType>{list[i++], nullptr, nullptr};
+            pBtNode = new BTNode<ElemType>{*list[i++], nullptr, nullptr};
             total++;
-
+            auto *btNode = new BTNode<ElemType>;
+            nodeStack.getTop(reinterpret_cast<BTNode<char> *&>(btNode));
             switch (ch) { // NOLINT(*-multiway-paths-covered)
                 case '(': // 左括号表示进入左子树
                     if (ret->root == nullptr) {
                         ret->root = pBtNode; // 设置根节点
                     } else {
                         // 检查栈顶节点的左子节点是否为空
-                        if (nodeStack.top()->lChild == nullptr) {
-                            nodeStack.top()->lChild = pBtNode; // 连接为左子节点
+                        if (btNode->lChild == nullptr) {
+                            btNode->lChild = pBtNode; // 连接为左子节点
                         } else {
                             // 如果左子节点已经存在，连接为右子节点
-                            nodeStack.top()->rChild = pBtNode;
+                            btNode->rChild = pBtNode;
                         }
                     }
                     nodeStack.push(pBtNode); // 入栈当前节点
                     break;
                 case ')': // 右括号表示回到父节点
-                    if (!nodeStack.empty()) {
+                    if (!nodeStack.isEmpty()) {
                         nodeStack.pop(); // 弹出栈顶节点
                     }
                     break;
                 case ',': // 逗号表示当前节点完成，准备下一个节点
-                    if (!nodeStack.empty()) {
-                        nodeStack.top()->rChild = pBtNode; // 连接为右子节点
+                    if (!nodeStack.isEmpty()) {
+                        btNode->rChild = pBtNode; // 连接为右子节点
                     }
                     break;
             }
         }
+        delete pBtNode;
         return ret; // 返回创建的树
     }
 

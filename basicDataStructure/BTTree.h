@@ -88,7 +88,7 @@ namespace ds {
          * @param inx
          * @return 创建的二叉树指针
          */
-        static BTTree* createBTTree(ElemType list[], const char inx[], int nodeTotal);
+        static BTTree* createBTTree(ElemType *list[], const char inx[], int nodeTotal);
         void destroy();
         BTNode<ElemType>* findNode(ElemType target);
         BTNode<ElemType>* getRootNode();
